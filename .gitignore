@@ -1,0 +1,6 @@
+# Default ignored files
+/.idea/
+/.gradle/
+/target/
+advent-of-code-2020.iml
+
