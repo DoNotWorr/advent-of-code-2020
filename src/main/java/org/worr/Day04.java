@@ -38,7 +38,6 @@ public class Day04 {
     static final int maxHeigthCentimeter = 193;
 
 
-
     static final Set<String> eyeColors = Stream.of("amb", "blu", "brn", "gry", "grn", "hzl", "oth").collect(toSet());
 
     public static void main(String[] args) {
@@ -74,10 +73,9 @@ public class Day04 {
     }
 
 
-
-
     /**
      * Checks if a birth year is valid
+     *
      * @param birthYear birth year
      * @return true if input contains four digits; at least 1920 and at most 2002. Otherwise it returns false.
      */
@@ -87,6 +85,7 @@ public class Day04 {
 
     /**
      * Checks if issue year is valid
+     *
      * @param issueYear the year passport was issued
      * @return true if year is within boundry defined in final variables, false if it isn't. False if string cannot be parsed to int
      */
@@ -96,6 +95,7 @@ public class Day04 {
 
     /**
      * Checks if expiration year is valid
+     *
      * @param expirationYear the year passport will expire
      * @return true if year is within boundry defined in global variables, false if it isn't. False if string cannot be parsed to int
      */
@@ -105,6 +105,7 @@ public class Day04 {
 
     /**
      * Checks if height is valid. Must be within a boundry defined in global variable. Must be either inches (in) or centimeters (cm)
+     *
      * @param heigth heigth in the format of a number followed by "in" or "cm", for example "160cm" or "60in"
      * @return true if heigth is valid
      */
@@ -112,7 +113,7 @@ public class Day04 {
         String unit = heigth.substring(heigth.length() - 2);
         int value;
         try {
-            value = Integer.parseInt(heigth.substring(0, heigth.length() -2));
+            value = Integer.parseInt(heigth.substring(0, heigth.length() - 2));
         } catch (NumberFormatException e) {
             return false;
         }
@@ -120,9 +121,9 @@ public class Day04 {
     }
 
 
-
     /**
      * Validates that haircolor is a hexadecimal in format
+     *
      * @param hairColor haircolor
      * @return true if haircolor has format #RRGGBB. Otherwise false.
      */
@@ -145,6 +146,7 @@ public class Day04 {
 
     /**
      * Checks if eye color is valid
+     *
      * @param eyeColor the eye color value in a passport
      * @return true if input exists in the global variable eyeColors
      */
@@ -154,6 +156,7 @@ public class Day04 {
 
     /**
      * Validates passport ID. A valid passport is a nine-digit number, including leading zeroes.
+     *
      * @param passportID passportID value in a passport
      * @return true if input is valid, false if invalid
      * todo Läs på om try-catch är ett bra sätt att validera data
@@ -172,9 +175,9 @@ public class Day04 {
     }
 
 
-
     /**
      * Converts flatdata to nested data.
+     *
      * @param flatData each string of flatData contains one or more fields in a passport. Each field is separated by space (" "). Each field consists of a field name and its value, separated by colon (":"). Each passport is separated with an empty string
      * @return a list of maps, each passport stored in map
      */
@@ -210,7 +213,8 @@ public class Day04 {
 
     /**
      * Checks if a string representation of a year is within a given boundry
-     * @param year string representation of year that you want to control
+     *
+     * @param year    string representation of year that you want to control
      * @param yearMin inclusive lower boundry
      * @param yearMax inclusive upper boundry
      * @return true if year is within boundry, false if year cannot be parsed to integer or if year is not within boundry
@@ -230,8 +234,9 @@ public class Day04 {
 
     /**
      * Validate height given a unit "cm" (centimeter) or "in" (inch)
+     *
      * @param heigth heigth
-     * @param unit either "cm" or "in"
+     * @param unit   either "cm" or "in"
      * @return true if within boundry defined in global variable. Otherwise false.
      */
     private static boolean validateHeigth(int heigth, String unit) {

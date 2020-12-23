@@ -1,6 +1,7 @@
 package org.worr;
 
 import static org.assertj.core.api.Assertions.*;
+
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -20,12 +21,11 @@ import java.util.Map;
  * pid (Passport ID) - a nine-digit number, including leading zeroes.
  * cid (Country ID) - ignored, missing or not.
  */
-public class Day04Test
-{
+public class Day04Test {
     @Test
     public void validLowBoundry() {
         //Arrange
-        Map<String,String> onePassport = new HashMap<>();
+        Map<String, String> onePassport = new HashMap<>();
         onePassport.put("byr", "1920");
         onePassport.put("iyr", "2010");
         onePassport.put("eyr", "2020");
@@ -33,7 +33,7 @@ public class Day04Test
         onePassport.put("hcl", "#000000");
         onePassport.put("ecl", "amb");
         onePassport.put("pid", "000000001");
-        List<Map<String,String>> list = new ArrayList<>();
+        List<Map<String, String>> list = new ArrayList<>();
         list.add(onePassport);
         long expected = 1;
 
