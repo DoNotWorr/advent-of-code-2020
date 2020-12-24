@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+/**
+ * https://adventofcode.com/2020/day/3
+ */
 public class Day03 {
     static List<String> inputField = new FileHelper().getFileLines("day-03.txt");
 

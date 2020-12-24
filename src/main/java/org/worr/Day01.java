@@ -2,6 +2,9 @@ package org.worr;
 
 import java.util.*;
 
+/**
+ * https://adventofcode.com/2020/day/1
+ */
 public class Day01 {
 
     public static void main(String[] args) {

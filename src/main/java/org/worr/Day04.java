@@ -21,6 +21,9 @@ import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toSet;
 
+/**
+ * https://adventofcode.com/2020/day/4
+ */
 public class Day04 {
     static final int minBirthYear = 1920;
     static final int maxBirthYear = 2002;

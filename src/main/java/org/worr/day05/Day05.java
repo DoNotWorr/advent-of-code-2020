@@ -7,6 +7,8 @@ import java.util.OptionalInt;
 import java.util.stream.Collectors;
 
 /**
+ * https://adventofcode.com/2020/day/5
+ *
  * Since it column and row numbers never actually mattered, it would've been easier to consider the seat ID a 10-bit binary.
  * Not going to change it now though.
  */
@@ -20,7 +22,8 @@ public class Day05 {
             System.out.println("Highest ID in part 1: " + getHighestID(inputData).getAsInt());
         }
 
-        System.out.println("Your seat ID: " + getYourSeatID(inputData));
+        System.out.println("Your seat ID: ");
+        getYourSeatID(inputData).forEach(System.out::println);
     }
 
     /**
@@ -46,10 +49,14 @@ public class Day05 {
         BinaryConverter binaryColumns = new BinaryConverter('L', 'R');
         List<Integer> seatIDs = inputData.stream()
                 .map(dataEntry -> binaryRows.binToDec(dataEntry.substring(0,7)) * 8 + binaryColumns.binToDec(dataEntry.substring(7)))
+                .sorted()
                 .collect(Collectors.toList());
+
+
 
         return seatIDs.stream()
                 .filter(currentID -> seatIDs.contains(currentID + 2) && !seatIDs.contains(currentID + 1))
+                .map(seatID -> seatID + 1)
                 .collect(Collectors.toList());
     }
 }
